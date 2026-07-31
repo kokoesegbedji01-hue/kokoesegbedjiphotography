@@ -1,0 +1,1354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="A personal photography portfolio by Kokoe Segbedji, focused on events, portraits, and New York City life.">
+  <title>Kokoe Segbedji — Photography</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0a0a0a;
+      --text: #f2f2f2;
+      --muted: #999;
+      --line: #222;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      letter-spacing: .015em;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(5,5,5,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+
+    .hero-single {
+      padding: 72px 0 90px;
+    }
+
+    .hero-heading {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .hero-name {
+      margin: 0;
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+    }
+
+    .hero-disclaimer {
+      max-width: 640px;
+      margin: 14px 0 30px;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.7;
+    }
+
+    .hero-heading .eyebrow {
+      margin-bottom: 0;
+    }
+
+    .hero-image-single {
+      width: min(100%, 520px);
+      max-width: 520px;
+      margin: 0;
+    }
+
+    .hero-statement {
+      max-width: 780px;
+      margin-top: 42px;
+    }
+
+    .hero-statement h1 {
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: 1;
+    }
+
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: grid;
+      grid-template-columns: 1fr minmax(270px, 410px);
+      align-items: center;
+      gap: clamp(48px, 8vw, 110px);
+      padding: 72px 0;
+    }
+
+    .eyebrow, .kicker {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: -.025em;
+    }
+
+    h1 {
+      max-width: 720px;
+      font-size: clamp(2.7rem, 6vw, 5.8rem);
+      line-height: .98;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: #c5c5c5;
+      font-size: clamp(1rem, 1.4vw, 1.14rem);
+    }
+
+    .role {
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 410px;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      background: #050505;
+    }
+
+    .quiet-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 34px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #777;
+      text-decoration: none;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .17em;
+    }
+
+    section {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      margin-bottom: 52px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.05;
+      max-width: 760px;
+    }
+
+    .copy {
+      max-width: 740px;
+      color: #b7b7b7;
+      font-size: 1rem;
+    }
+
+    .copy p { margin: 0 0 18px; }
+
+    .note {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .work {
+      display: grid;
+      gap: 16px;
+    }
+
+    .work img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .work.portrait img {
+      object-position: center 30%;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .meta h3 {
+      font-size: 1rem;
+      letter-spacing: .01em;
+    }
+
+    .meta p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .index {
+      color: #666;
+      font-size: .72rem;
+      letter-spacing: .14em;
+    }
+
+    .event-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, 1.1fr);
+      gap: clamp(44px, 8vw, 100px);
+      align-items: start;
+    }
+
+    .event-wrap h2 {
+      font-size: clamp(2.3rem, 5vw, 4.8rem);
+      line-height: 1;
+      margin-bottom: 28px;
+    }
+
+    .event-copy {
+      color: #bdbdbd;
+      max-width: 620px;
+    }
+
+    .event-details {
+      border-top: 1px solid var(--line);
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .86rem;
+    }
+
+    .detail span:first-child {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .7rem;
+    }
+
+
+    .event-copy a {
+      color: var(--text);
+      text-decoration-color: #666;
+      text-underline-offset: 4px;
+    }
+
+    .event-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 26px;
+      margin-top: 10px;
+    }
+
+    .event-links .quiet-link {
+      margin-top: 16px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0 48px;
+      color: #777;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 760px) {
+
+      .hero-single {
+        padding: 42px 0 64px;
+      }
+
+      .hero-heading {
+        margin-bottom: 26px;
+      }
+
+      .hero-name {
+        font-size: .82rem;
+        letter-spacing: .17em;
+        line-height: 1.6;
+      }
+
+      .hero-disclaimer {
+        margin: 12px 0 24px;
+        font-size: .78rem;
+      }
+
+      .hero-image-single {
+        width: 100%;
+        max-width: 390px;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
+      .hero-statement {
+        margin-top: 30px;
+      }
+
+      .hero-statement h1 {
+        font-size: clamp(2.25rem, 11vw, 3.5rem);
+        line-height: 1.02;
+      }
+
+      body {
+        font-size: 16px;
+      }
+
+      .shell {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      header {
+        position: sticky;
+      }
+
+      nav {
+        min-height: 58px;
+        gap: 12px;
+      }
+
+      .brand {
+        font-size: .68rem;
+        letter-spacing: .16em;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: .66rem;
+        letter-spacing: .1em;
+        padding: 12px 0;
+      }
+
+      .nav-links a:nth-child(2) {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 34px;
+        padding: 48px 0 64px;
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 12vw, 4rem);
+        line-height: 1.02;
+      }
+
+      .intro {
+        margin-top: 22px;
+        font-size: 1rem;
+        line-height: 1.72;
+      }
+
+      .role {
+        margin-top: 22px;
+        font-size: .68rem;
+        line-height: 1.6;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 390px;
+        height: auto;
+        max-height: none;
+        margin: 0 auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .quiet-link {
+        min-height: 44px;
+        align-items: center;
+        margin-top: 28px;
+        font-size: .7rem;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .section-head,
+      .event-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        gap: 8px;
+        margin-bottom: 34px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .copy {
+        font-size: .98rem;
+        line-height: 1.75;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .work img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .work.portrait img {
+        aspect-ratio: 4 / 5;
+        object-position: center 24%;
+      }
+
+      .meta {
+        grid-template-columns: 1fr auto;
+      }
+
+      .event-wrap {
+        gap: 42px;
+      }
+
+      .event-wrap h2 {
+        font-size: clamp(2.5rem, 14vw, 4rem);
+      }
+
+      .event-copy {
+        font-size: .98rem;
+        line-height: 1.75;
+      }
+
+      .detail {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 18px 0;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+  
+    .event-copy a {
+      color: var(--text);
+      text-decoration-color: #666;
+      text-underline-offset: 4px;
+    }
+
+    .event-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 26px;
+      margin-top: 10px;
+    }
+
+    .event-links .quiet-link {
+      margin-top: 16px;
+    }
+
+    footer {
+        padding: 28px 0 34px;
+        font-size: .66rem;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .nav-links a:nth-child(1) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 11vw, 3.2rem);
+      }
+
+      .eyebrow,
+      .kicker {
+        font-size: .64rem;
+      }
+    }
+  
+
+/* Universal responsive refinements */
+img{max-width:100%;height:auto}
+.hero-single,.shell{width:min(92vw,1180px);margin-inline:auto}
+.hero-image-single{display:block;margin:0 auto;max-width:min(420px,90vw)}
+.hero-heading,.hero-statement{margin-inline:auto;text-align:center}
+.hero-statement{max-width:760px}
+h1{overflow-wrap:break-word}
+@media (min-width:1024px){
+  .hero-single{
+    min-height:calc(100vh - 64px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+}
+@media (max-width:1023px){
+  .shell{width:min(94vw,760px)}
+}
+@media (max-width:768px){
+  body{font-size:16px}
+  .hero-single{padding:32px 0 56px}
+  .hero-image-single{max-width:320px}
+  .hero-statement h1{font-size:clamp(2rem,10vw,3.2rem)}
+  .intro{font-size:1rem;padding:0 8px}
+  .nav-links{flex-wrap:wrap;justify-content:center}
+}
+@media (max-width:430px){
+  .hero-image-single{max-width:280px}
+  .hero-name{font-size:.78rem}
+  .hero-disclaimer{font-size:.75rem}
+}
+
+
+
+    .sound-entry {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(5,5,5,.985);
+      transition: opacity .5s ease, visibility .5s ease;
+    }
+
+    .sound-entry.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .sound-entry-inner {
+      width: min(100%, 430px);
+      text-align: center;
+    }
+
+    .sound-entry-title {
+      margin: 0 0 14px;
+      font-weight: 300;
+      font-size: clamp(2rem, 7vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .sound-entry-copy {
+      max-width: 390px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.7;
+    }
+
+    .spotify-stage {
+      width: 100%;
+      margin: 0 auto 20px;
+    }
+
+    .spotify-stage iframe {
+      display: block;
+      width: 100%;
+      height: 152px;
+      border: 0;
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .sound-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .sound-button {
+      min-height: 46px;
+      padding: 0 16px;
+      border: 1px solid #444;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      cursor: pointer;
+    }
+
+    .sound-button:hover {
+      border-color: #aaa;
+    }
+
+    .sound-note {
+      margin: 14px 0 0;
+      color: #707070;
+      font-size: .68rem;
+      line-height: 1.5;
+    }
+
+    .spotify-dock {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 100;
+      width: min(340px, calc(100vw - 32px));
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+    }
+
+    .spotify-dock.is-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .spotify-dock iframe {
+      display: block;
+      width: 100%;
+      height: 80px;
+      border: 0;
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .dock-hide {
+      position: absolute;
+      right: 7px;
+      top: -34px;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 1px solid #333;
+      background: rgba(5,5,5,.94);
+      color: #aaa;
+      font: inherit;
+      font-size: .61rem;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      cursor: pointer;
+    }
+
+    .player-return {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 100;
+      display: none;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid #333;
+      background: rgba(5,5,5,.94);
+      color: #aaa;
+      font: inherit;
+      font-size: .64rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    .player-return.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 480px) {
+      .sound-entry {
+        padding: 18px;
+      }
+
+      .sound-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .spotify-stage iframe {
+        height: 152px;
+      }
+
+      .spotify-dock {
+        right: 10px;
+        bottom: 10px;
+        width: calc(100vw - 20px);
+      }
+
+      .player-return {
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+
+
+    .sound-entry {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(5,5,5,.99);
+      transition: opacity .45s ease, visibility .45s ease;
+    }
+
+    .sound-entry.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .sound-entry-inner {
+      width: min(100%, 430px);
+      text-align: center;
+    }
+
+    .sound-entry-title {
+      margin: 0 0 12px;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .sound-entry-copy {
+      margin: 0 auto 26px;
+      max-width: 360px;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.65;
+    }
+
+    .sound-choice-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .sound-choice-button {
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid #444;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .sound-choice-button:hover {
+      border-color: #aaa;
+      background: rgba(255,255,255,.04);
+    }
+
+    .audio-toggle {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 500;
+      display: none;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid #333;
+      background: rgba(5,5,5,.9);
+      color: #aaa;
+      font: inherit;
+      font-size: .64rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    .audio-toggle.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 480px) {
+      .sound-choice-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .audio-toggle {
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+
+
+    .portrait-study {
+      padding: 90px 24px;
+    }
+
+    .portrait-study-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .portrait-study-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .portrait-study-title {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 300;
+      letter-spacing: -.035em;
+    }
+
+    .portrait-study-label {
+      margin: 0 0 7px;
+      color: var(--muted);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .portrait-counter {
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .12em;
+    }
+
+    .portrait-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #0d0d0d;
+    }
+
+    .portrait-track {
+      display: flex;
+      transition: transform .75s cubic-bezier(.22,.61,.36,1);
+      will-change: transform;
+    }
+
+    .portrait-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .portrait-slide img {
+      width: 100%;
+      height: min(78vh, 860px);
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .portrait-slide:nth-child(3) img {
+      object-position: center 28%;
+    }
+
+    .portrait-caption {
+      position: absolute;
+      left: 22px;
+      bottom: 18px;
+      padding: 8px 11px;
+      background: rgba(0,0,0,.55);
+      color: #f2f2f2;
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .portrait-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      background: rgba(0,0,0,.35);
+      color: white;
+      font-size: 1.35rem;
+      cursor: pointer;
+      transform: translateY(-50%);
+      backdrop-filter: blur(8px);
+    }
+
+    .portrait-arrow:hover {
+      background: rgba(0,0,0,.65);
+    }
+
+    .portrait-arrow.prev {
+      left: 16px;
+    }
+
+    .portrait-arrow.next {
+      right: 16px;
+    }
+
+    .portrait-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .portrait-dot {
+      width: 7px;
+      height: 7px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #4b4b4b;
+      cursor: pointer;
+    }
+
+    .portrait-dot.is-active {
+      background: #f2f2f2;
+    }
+
+    @media (max-width: 700px) {
+      .portrait-study {
+        padding: 65px 14px;
+      }
+
+      .portrait-study-header {
+        align-items: start;
+      }
+
+      .portrait-slide img {
+        height: 68vh;
+      }
+
+      .portrait-arrow {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+</style>
+</head>
+<body>
+
+  <div class="sound-entry" id="sound-entry" role="dialog" aria-modal="true" aria-label="Sound preference">
+    <div class="sound-entry-inner">
+      <p class="kicker">Kokoe Segbedji Photography</p>
+      <h1 class="sound-entry-title">Enter the portfolio</h1>
+      <p class="sound-entry-copy">Choose whether you would like to experience the portfolio with music.</p>
+      <div class="sound-choice-buttons">
+        <button class="sound-choice-button" id="sound-on" type="button">Sound On</button>
+        <button class="sound-choice-button" id="sound-off" type="button">Sound Off</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="portfolio-audio" loop preload="auto">
+    <source src="assets/audio/silver-linings.mp3" type="audio/mpeg">
+  </audio>
+  <button class="audio-toggle" id="audio-toggle" type="button" aria-label="Mute soundtrack">Mute</button>
+
+
+  
+  
+
+  <header>
+    <nav class="shell" aria-label="Primary navigation">
+      <a class="brand" href="#top">Kokoe Segbedji</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Selected Work</a>
+        <a href="#events">YREPNY</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section style="border-top:0; padding:0;">
+      <div class="hero-single shell">
+        <div class="hero-heading">
+          <p class="hero-name">Kokoe Segbedji Photography</p>
+          <p class="hero-disclaimer">This portfolio is a personal creative project. I am not available for bookings or commercial photography.</p>
+          <p class="eyebrow">New York Photographer</p>
+        </div>
+
+        <img class="hero-image hero-image-single" src="assets/hero.jpg" alt="Black-and-white portrait of Kokoe Segbedji">
+
+        <div style="text-align:center;margin-top:18px;">
+          <a class="quiet-link" href="https://kokoesegbedji.pixieset.com/yrepny/" target="_blank" rel="noopener">
+            View Event Collection ↗
+          </a>
+        </div>
+
+        <div class="hero-statement">
+          <h1>Genuine expression.<br>Human connection.<br>Atmosphere.</h1>
+          <p class="intro">
+            Photography is one of my favorite hobbies. I document events, portraits, and city life with a focus on the small, honest moments that make an experience genuine.
+          </p>
+          <p class="role">YREPNY Director of Strategy &amp; Photographer</p>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="shell">
+        <div class="section-head">
+          <p class="kicker">About</p>
+          <h2>Photography as a personal creative practice.</h2>
+        </div>
+        <div class="copy" style="margin-left:auto;">
+          <p>
+            I photograph people and environments with an eye for genuine expression, clean composition, and the details that make an experience memorable.
+          </p>
+           <p class="note">
+            This portfolio is a personal creative project. I am not available for bookings or commercial photography.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shell">
+        <div class="section-head">
+          <p class="kicker">Selected Work</p>
+          <h2>Portraits and observations from New York.</h2>
+        </div>
+
+        <div class="work-grid">
+          <article class="work">
+            <img src="assets/city.jpg" alt="Elevated view down a New York City street at dusk, framed by tall buildings">
+            <div class="meta">
+              <div>
+                <h3>City Study 01</h3>
+                <p>New York, NY</p>
+              </div>
+              <span class="index">01</span>
+            </div>
+          </article>
+
+          <article class="work portrait">
+            <img src="assets/portrait_friend.jpg" alt="Portrait of a person in a suit photographed against the New York skyline">
+            <div class="meta">
+              <div>
+                <h3>Portrait Study 01</h3>
+                <p>Natural light portrait</p>
+              </div>
+              <span class="index">02</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="events">
+      <div class="shell event-wrap">
+        <div>
+          <p class="kicker">Event Photography</p>
+          <h2>YREPNY</h2>
+          <p class="event-copy">
+            Young Real Estate Professionals of New York (YREPNY) is a nonprofit organization serving commercial real estate and finance professionals throughout the New York metropolitan area. Founded in 2001 by
+            <a href="https://www.linkedin.com/in/mike-strug" target="_blank" rel="noopener">Mike Strug</a>,
+            YREPNY provides free membership, hosts monthly networking events, and maintains affiliate chapters in Atlanta, Chicago, Houston, San Francisco, and Washington, D.C.
+          </p>
+          <p class="event-copy">
+            As YREPNY Director of Strategy &amp; Photographer, I document the organization’s events by capturing authentic conversations, meaningful connections I make, and the atmosphere that defines New York’s real estate community.
+          </p>
+          <div class="event-links">
+            <a class="quiet-link" href="https://www.yrepny.org/" target="_blank" rel="noopener">
+              Visit YREPNY <span aria-hidden="true">↗</span>
+            </a>
+            <a class="quiet-link" href="https://www.linkedin.com/in/mike-strug" target="_blank" rel="noopener">
+              Mike Strug on LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a class="quiet-link" href="https://kokoesegbedji.pixieset.com/yrepny/" target="_blank" rel="noopener">
+              View the complete event collection <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="event-details">
+          <div class="detail">
+            <span>Organization</span>
+            <div>Young Real Estate Professionals of New York</div>
+          </div>
+          <div class="detail">
+            <span>Founded</span>
+            <div>2001 by Mike Strug</div>
+          </div>
+          <div class="detail">
+            <span>Focus</span>
+            <div>Free membership, monthly networking events, and professional connection across commercial real estate and finance.</div>
+          </div>
+          <div class="detail">
+            <span>My Role</span>
+            <div>Director of Strategy &amp; Photographer</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+
+</main>
+
+  
+<section id="portrait-study-1" class="portrait-study">
+  <div class="portrait-study-inner">
+    <div class="portrait-study-header">
+      <div>
+        <p class="portrait-study-label">Portrait Study 1</p>
+        <h2 class="portrait-study-title">City Portraits</h2>
+      </div>
+      <div class="portrait-counter" id="portrait-counter">01 / 02</div>
+    </div>
+
+    <div class="portrait-carousel" id="portrait-carousel" aria-label="Portrait Study 1 slideshow">
+      <div class="portrait-track" id="portrait-track">
+        <figure class="portrait-slide">
+          <img src="assets/images/portrait_rooftop_man.jpg" alt="Rooftop portrait">
+          <figcaption class="portrait-caption">Rooftop Portrait</figcaption>
+        </figure>
+        <figure class="portrait-slide">
+          <img src="assets/images/portrait_rooftop_woman.jpg" alt="City portrait">
+          <figcaption class="portrait-caption">City Portrait</figcaption>
+        </figure>
+      </div>
+
+      <button class="portrait-arrow prev" id="portrait-prev" type="button" aria-label="Previous portrait">‹</button>
+      <button class="portrait-arrow next" id="portrait-next" type="button" aria-label="Next portrait">›</button>
+    </div>
+
+    <div class="portrait-dots" id="portrait-dots" aria-label="Choose portrait">
+      <button class="portrait-dot is-active" type="button" aria-label="Portrait 1"></button>
+      <button class="portrait-dot" type="button" aria-label="Portrait 2"></button>
+    </div>
+  </div>
+</section>
+
+<footer>
+    <div class="shell footer-row">
+      <span>Photography by Kokoe Segbedji</span>
+      <span>Personal work only · Not available for bookings</span>
+    </div>
+  </footer>
+
+  
+
+
+  <script>
+    const soundEntry = document.getElementById('sound-entry');
+    const soundOnButton = document.getElementById('sound-on');
+    const soundOffButton = document.getElementById('sound-off');
+    const portfolioAudio = document.getElementById('portfolio-audio');
+    const audioToggle = document.getElementById('audio-toggle');
+
+    document.body.style.overflow = 'hidden';
+
+    function enterPortfolio() {
+      soundEntry.classList.add('is-hidden');
+      document.body.style.overflow = '';
+    }
+
+    soundOnButton.addEventListener('click', async function () {
+      try {
+        portfolioAudio.volume = 0.55;
+        await portfolioAudio.play();
+        audioToggle.classList.add('is-visible');
+        audioToggle.textContent = 'Mute';
+        audioToggle.setAttribute('aria-label', 'Mute soundtrack');
+      } catch (error) {
+        console.warn('Audio playback could not start:', error);
+      }
+      enterPortfolio();
+    });
+
+    soundOffButton.addEventListener('click', function () {
+      portfolioAudio.pause();
+      portfolioAudio.currentTime = 0;
+      audioToggle.classList.remove('is-visible');
+      enterPortfolio();
+    });
+
+    audioToggle.addEventListener('click', function () {
+      portfolioAudio.muted = !portfolioAudio.muted;
+      audioToggle.textContent = portfolioAudio.muted ? 'Sound On' : 'Mute';
+      audioToggle.setAttribute(
+        'aria-label',
+        portfolioAudio.muted ? 'Turn soundtrack on' : 'Mute soundtrack'
+      );
+    });
+  </script>
+
+
+  <script>
+    (function () {
+      const carousel = document.getElementById('portrait-carousel');
+      const track = document.getElementById('portrait-track');
+      const slides = Array.from(track.children);
+      const prevButton = document.getElementById('portrait-prev');
+      const nextButton = document.getElementById('portrait-next');
+      const dots = Array.from(document.querySelectorAll('.portrait-dot'));
+      const counter = document.getElementById('portrait-counter');
+
+      let currentIndex = 0;
+      let autoplayTimer;
+
+      function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('is-active', i === currentIndex));
+        counter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${'02'}`;
+      }
+
+      function startAutoplay() {
+        clearInterval(autoplayTimer);
+        autoplayTimer = setInterval(() => showSlide(currentIndex + 1), 5000);
+      }
+
+      function manualChange(index) {
+        showSlide(index);
+        startAutoplay();
+      }
+
+      prevButton.addEventListener('click', () => manualChange(currentIndex - 1));
+      nextButton.addEventListener('click', () => manualChange(currentIndex + 1));
+      dots.forEach((dot, index) => dot.addEventListener('click', () => manualChange(index)));
+
+      let touchStartX = 0;
+      carousel.addEventListener('touchstart', event => {
+        touchStartX = event.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', event => {
+        const delta = event.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(delta) > 45) {
+          manualChange(delta < 0 ? currentIndex + 1 : currentIndex - 1);
+        }
+      }, { passive: true });
+
+      carousel.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+      carousel.addEventListener('mouseleave', startAutoplay);
+
+      showSlide(0);
+      startAutoplay();
+    })();
+  </script>
+
+</body>
+</html>
